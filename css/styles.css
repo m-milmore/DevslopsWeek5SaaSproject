@@ -4,17 +4,16 @@
     background-image: linear-gradient(to left, rgba(231, 231, 231, 0.1) 0, white);
     position: relative;
     overflow: hidden;
-    z-index: -11;
 }
 
 .circle {
-    background: rgba(229, 229, 229, .1);
+    background: rgba(229, 229, 229, .3);
     width: 1000px;
     height: 1000px;
     border-radius: 50%;
     position: absolute;
     bottom: -425px;
-    right: 250px;
+    right: 300px;
     z-index: -10;
 }
 
@@ -26,7 +25,7 @@
     border-bottom: 1000px solid rgb(240, 240, 240);
     position: absolute;
     bottom: 0;
-    right: -300px;
+    right: -350px;
     z-index: -9;
 }
 
@@ -43,23 +42,255 @@
 }
 
 
-/* header container */
+/* header-section container will contain topNav, bottomNav and empowering section*/
 
-header {
+.header-section {
     max-width: 75rem;
     height: 600px;
     margin: 0 auto;
-    padding-top: 15px;
+    padding: 15px 15px 0;
 }
 
-.arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
+
+/* topNav has 3 p elements: Main Demo, Demos, and Docs */
+
+.topNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
 }
 
-.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+.topNav-push-right {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.arrow-down {
+    position: absolute;
+    right: 70px;
+    top: 5px;
+    cursor: pointer;
+}
+
+[aria-expanded="false"]~ul {
+    display: none;
+}
+
+[aria-expanded="true"]~ul {
+    display: block;
+    position: absolute;
+    right: 75px;
+    top: 25px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), grey);
+    box-shadow: 0 0 var(--size-20) rgba(52, 49, 75, 0.1);
+    border-radius: 3px;
+    text-align: center;
+}
+
+[aria-expanded="true"]~ul li a {
+    margin: var(--size-20);
+    color: var(--font-color-dark);
+}
+
+
+/* bottomNav has 3 section: a logo, an un-ordered list, and a Buy Now button */
+
+.bottomNav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.bottomNav img {
+    width: 50%;
+}
+
+.bottomNav-push-right {
+    margin-left: auto;
+}
+
+.bottomNav ul {
+    display: flex;
+    align-items: center;
+}
+
+.bottomNav li a {
+    line-height: var(--size-20);
+    margin-right: var(--size-40);
+    font-size: var(--size-16);
+}
+
+.bottomNav li:first-child a {
+    color: var(--font-color-btn);
+}
+
+
+/* Section empowering; contains block-text and block-icons div */
+
+.empowering {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.empowering>div {
+    flex: 1;
+}
+
+
+/* block-text section contains h1, p, and 2 buttons */
+
+.empowering .block-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.empowering .block-text h1 {
+    font-size: var(--size-50);
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    color: var(--black);
+}
+
+.empowering .block-text p {
+    margin: 0;
+    font-weight: 600;
+    padding: var(--size-10) 0 var(--size-20);
+}
+
+.empowering .empowering-buttons {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* block-icons; contains 7 icons */
+
+.empowering .block-icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 125px);
+}
+
+.empowering .block-icons>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    position: relative;
+}
+
+.atlassian-logo {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    position: relative;
+}
+
+.asana-logo {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    position: relative;
+}
+
+.paypal-logo {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    position: relative;
+}
+
+.weave-logo {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    position: relative;
+}
+
+.google-ads-logo {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    position: relative;
+}
+
+.calendar-logo {
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    position: relative;
+}
+
+.empowering .round-white-bg {
+    background-color: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 5px 10px 3px rgb(235 235 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empowering .small {
+    width: 50px;
+    height: 50px;
+}
+
+.empowering .big {
+    width: 65px;
+    height: 65px;
+}
+
+.google-img-container {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+}
+
+.atlasian-img-container {
+    position: absolute;
+    left: 20px;
+    top: 80px;
+}
+
+.asana-img-container {
+    position: absolute;
+    left: -70px;
+    top: 50px;
+}
+
+.paypal-img-container {
+    position: absolute;
+    left: 32px;
+    top: 40px;
+}
+
+.weave-img-container {
+    position: absolute;
+    left: -40px;
+    top: 38px;
+}
+
+.google-ads-img-container {
+    position: absolute;
+    left: -25px;
+    top: 20px;
+}
+
+.calendar-img-container {
+    position: absolute;
+    left: -80px;
+    top: 60px;
+}
+
+.empowering .block-icons img {
+    width: 50%;
+}
+
+.empowering .block-icons .ads-icon {
+    width: 70%;
 }

@@ -19,22 +19,137 @@
 </head>
 
 <body>
-    <div class="header-container">
+    <section class="header-container">
         <div class="circle"></div>
         <div class="triangle-up"></div>
         <div class="triangle-left"></div>
-        <header>
+        <header class="header-section">
             <nav class="topNav">
-                <p><i class="arrow left"></i> Main Demo</p>
+                <a href="./html/dummy-page.html"><i class="arrow left"></i>&nbsp;&nbsp;Main Demo</a>
+                <a href="#" id="demos" class="topNav-push-right" aria-expanded="false">Demos&nbsp;&nbsp;&nbsp;<i class="arrow down"></i></a>
+                <ul>
+                    <li>
+                        <a href="./html/dummy-page.html">Demo-1</a>
+                    </li>
+                    <li>
+                        <a href="./html/dummy-page.html">Demo-2</a>
+                    </li>
+                    <li>
+                        <a href="./html/dummy-page.html">Demo-3</a>
+                    </li>
+                </ul>
+                <a href="#" id="docs" aria-expanded="false">Docs&nbsp;&nbsp;&nbsp;<i class="arrow down"></i></a>
+                <ul>
+                    <li>
+                        <a href="./html/dummy-page.html">Doc-1</a>
+                    </li>
+                    <li>
+                        <a href="./html/dummy-page.html">Doc-2</a>
+                    </li>
+                    <li>
+                        <a href="./html/dummy-page.html">Doc-3</a>
+                    </li>
+                </ul>
             </nav>
-            <nav id="bottomNav" class="navbar">
-
+            <nav id="navbar" class="bottomNav">
+                <div>
+                    <a href="./html/dummy-page.html">
+                        <img src="./project_logo/logo.svg" alt="company logo">
+                    </a>
+                </div>
+                <div class="bottomNav-push-right">
+                    <ul>
+                        <li><a href="./html/dummy-page.html">Home</a></li>
+                        <li><a href="./html/dummy-page.html">Features</a></li>
+                        <li><a href="./html/dummy-page.html">Learn</a></li>
+                        <li><a href="./html/dummy-page.html">Pricing</a></li>
+                        <li><a href="./html/dummy-page.html">Hire Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a class="btn" href="./html/dummy-page.html">Buy Now</a>
+                </div>
             </nav>
             <section class="empowering">
-
+                <div class="block-text">
+                    <h1>Empowering <br> teams with the <br> freedom</h1>
+                    <p>Own the unlimited power of the web <br> development.</p>
+                    <div class="empowering-buttons">
+                        <a class="btn" href="#"><i class="fa fa-play-circle"></i>&nbsp;&nbsp;Play Video</a>
+                        <a class="btn btn-white" href="#">Learn More&nbsp;&nbsp;&nbsp;<i class="arrow-blue right"></i></a>
+                    </div>
+                </div>
+                <div class="block-icons">
+                    <div class="google-logo">
+                        <div class="round-white-bg small google-img-container">
+                            <img src="./logo_icons/google.png" alt="google icon">
+                        </div>
+                    </div>
+                    <div class="atlassian-logo">
+                        <div class="round-white-bg big atlasian-img-container">
+                            <img src="./logo_icons/atlassian.png" alt="atlasian icon">
+                        </div>
+                    </div>
+                    <div class="asana-logo">
+                        <div class="round-white-bg big asana-img-container">
+                            <img src="./logo_icons/asana.png" alt="asana icon">
+                        </div>
+                    </div>
+                    <div class="paypal-logo">
+                        <div class="round-white-bg big paypal-img-container">
+                            <img src="./logo_icons/paypal.jpg" alt="paypal icon">
+                        </div>
+                    </div>
+                    <div class="weave-logo">
+                        <div class="round-white-bg big weave-img-container">
+                            <img src="./logo_icons/weave.png" alt="weave icon">
+                        </div>
+                    </div>
+                    <div class="google-ads-logo">
+                        <div class="round-white-bg small google-ads-img-container">
+                            <img class="ads-icon" src="./logo_icons/google-ads.png" alt="google ads icon">
+                        </div>
+                    </div>
+                    <div class="calendar-logo">
+                        <div class="round-white-bg big calendar-img-container">
+                            <img src="./logo_icons/calendar.png" alt="calendar icon">
+                        </div>
+                    </div>
+                </div>
             </section>
         </header>
-    </div>
+    </section>
+
+    <script>
+        // const selDemos = document.querySelector("a[aria-expanded]");
+        const selDemos = document.getElementById("demos");
+        const selDocs = document.getElementById("docs");
+
+        function toggleNav({
+            target
+        }) {
+            const expanded = target.getAttribute("aria-expanded") === "true" || false;
+            selDemos.setAttribute("aria-expanded", !expanded);
+        }
+
+        selDemos.addEventListener("click", toggleNav);
+        selDocs.addEventListener("click", toggleNav);
+
+        // const sel = document.getElementById("demos");
+        // const arrowDn = document.getElementById("arrowDown");
+        // var toggle = true;
+
+        // function arrowClicked() {
+        //     if (toggle) {
+        //         sel.size = "3";
+        //     } else {
+        //         sel.size = "1";
+        //     }
+        //     toggle = !toggle;
+        // }
+
+        // arrowDn.addEventListener("click", arrowClicked);
+    </script>
 </body>
 
 </html>
