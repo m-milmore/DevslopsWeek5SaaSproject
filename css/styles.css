@@ -1,4 +1,4 @@
-/* header-container is for the background images behind the header */
+/* header-container is for the background images/shapes behind the header */
 
 .header-container {
     background-image: linear-gradient(to left, rgba(231, 231, 231, 0.1) 0, white);
@@ -60,6 +60,7 @@
     align-items: center;
     margin-bottom: 20px;
     position: relative;
+    z-index: 550;
 }
 
 .topNav-push-right {
@@ -74,33 +75,138 @@
     cursor: pointer;
 }
 
-[aria-expanded="false"]~ul {
+#demos[aria-expanded="false"]+ul {
     display: none;
 }
 
-[aria-expanded="true"]~ul {
-    display: block;
-    position: absolute;
+#docs[aria-expanded="false"]+ul {
+    display: none;
+}
+
+#demos[aria-expanded="true"]+ul {
     right: 75px;
     top: 25px;
+}
+
+#docs[aria-expanded="true"]+ul {
+    right: -25px;
+    top: 25px;
+    width: 93px;
+}
+
+[aria-expanded="true"]+ul {
+    display: block;
+    position: absolute;
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), grey);
     box-shadow: 0 0 var(--size-20) rgba(52, 49, 75, 0.1);
     border-radius: 3px;
     text-align: center;
 }
 
-[aria-expanded="true"]~ul li a {
+[aria-expanded="true"]+ul li a {
     margin: var(--size-20);
     color: var(--font-color-dark);
 }
 
 
-/* bottomNav has 3 section: a logo, an un-ordered list, and a Buy Now button */
+/* bottomNav has 3 section: a logo, an un-ordered list, and a Buy Now button, in a flex row */
 
 .bottomNav {
+    max-width: 75rem;
+    height: 130px;
+    margin: 0 auto;
+    padding: 15px 15px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 500;
+    /* transition: ease-in-out 0.3s; */
     display: flex;
     align-items: center;
     margin-bottom: 80px;
+}
+
+.bottomNav.sticky {
+    position: fixed;
+    height: 45px;
+    animation: reveal-nav-sticky .3s linear forwards;
+}
+
+@keyframes reveal-nav-sticky {
+    from {
+        top: -45px;
+        left: 0;
+    }
+    to {
+        visibility: visible;
+        top: 0;
+        left: 0;
+    }
+}
+
+.bottomNav.stickySlideUp {
+    position: absolute;
+    height: 130px;
+    animation: reveal-nav-stickySlideUp .3s linear;
+    transition: ease-in-out .3s;
+}
+
+@keyframes reveal-nav-stickySlideUp {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        /* visibility: visible; */
+        top: 0;
+        left: 0;
+    }
+}
+
+.navbg {
+    visibility: hidden;
+    background: var(--white);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 400;
+    height: 60px;
+    border-bottom: 1px solid rgba(189, 188, 188, .5);
+    box-shadow: 0 0 var(--size-20) rgba(48, 63, 100, 0.2);
+}
+
+.navbg.sticky {
+    animation: reveal-navbg .3s linear forwards;
+}
+
+@keyframes reveal-navbg {
+    from {
+        top: -60px;
+        left: 0;
+    }
+    to {
+        visibility: visible;
+        top: 0;
+        left: 0;
+    }
+}
+
+.navbg.stickySlideUp {
+    visibility: visible;
+    animation: slideUp-navbg .3s linear forwards;
+}
+
+@keyframes slideUp-navbg {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: -60px;
+        left: 0;
+    }
 }
 
 .bottomNav img {
@@ -133,7 +239,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin: 125px 0 40px;
 }
 
 .empowering>div {
@@ -246,45 +352,185 @@
 }
 
 .google-img-container {
+    visibility: hidden;
     position: absolute;
     left: 40px;
     top: 20px;
+    animation: reveal-google .5s linear forwards;
+}
+
+@keyframes reveal-google {
+    from {
+        position: absolute;
+        opacity: 0;
+        top: 60px;
+        left: 40px;
+        transform: scaleX(0);
+    }
+    to {
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+        top: 20px;
+        left: 40px;
+        transform: scaleX(1);
+    }
 }
 
 .atlasian-img-container {
+    visibility: hidden;
     position: absolute;
     left: 20px;
     top: 80px;
+    animation: reveal-atlasian .5s linear .5s forwards;
+}
+
+@keyframes reveal-atlasian {
+    from {
+        position: absolute;
+        opacity: 0;
+        top: 120px;
+        left: 20px;
+        transform: scaleX(0);
+    }
+    to {
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+        top: 80px;
+        left: 20px;
+        transform: scaleX(1);
+    }
 }
 
 .asana-img-container {
+    visibility: hidden;
     position: absolute;
     left: -70px;
     top: 50px;
+    animation: reveal-asana .5s linear .25s forwards;
+}
+
+@keyframes reveal-asana {
+    from {
+        position: absolute;
+        opacity: 0;
+        top: 90px;
+        left: -70px;
+        transform: scaleX(0);
+    }
+    to {
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+        top: 50px;
+        left: -70px;
+        transform: scaleX(1);
+    }
 }
 
 .paypal-img-container {
+    visibility: hidden;
     position: absolute;
     left: 32px;
     top: 40px;
+    animation: reveal-paypal .5s linear .75s forwards;
+}
+
+@keyframes reveal-paypal {
+    from {
+        position: absolute;
+        opacity: 0;
+        top: 80px;
+        left: 32px;
+        transform: scaleX(0);
+    }
+    to {
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+        top: 40px;
+        left: 32px;
+        transform: scaleX(1);
+    }
 }
 
 .weave-img-container {
+    visibility: hidden;
     position: absolute;
     left: -40px;
     top: 38px;
+    animation: reveal-weave .5s linear .25s forwards;
+}
+
+@keyframes reveal-weave {
+    from {
+        position: absolute;
+        opacity: 0;
+        top: 78px;
+        left: -40px;
+        transform: scaleX(0);
+    }
+    to {
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+        top: 38px;
+        left: -40px;
+        transform: scaleX(1);
+    }
 }
 
 .google-ads-img-container {
+    visibility: hidden;
     position: absolute;
     left: -25px;
     top: 20px;
+    animation: reveal-ads .5s linear .75s forwards;
+}
+
+@keyframes reveal-ads {
+    from {
+        position: absolute;
+        opacity: 0;
+        top: 60px;
+        left: -25px;
+        transform: scaleX(0);
+    }
+    to {
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+        top: 20px;
+        left: -25px;
+        transform: scaleX(1);
+    }
 }
 
 .calendar-img-container {
+    visibility: hidden;
     position: absolute;
     left: -80px;
     top: 60px;
+    animation: reveal-calendar .5s linear .5s forwards;
+}
+
+@keyframes reveal-calendar {
+    from {
+        position: absolute;
+        opacity: 0;
+        top: 100px;
+        left: -80px;
+        /* transform: scaleX(0); */
+    }
+    to {
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+        top: 60px;
+        left: -80px;
+        /* transform: scaleX(1); */
+    }
 }
 
 .empowering .block-icons img {
@@ -293,4 +539,249 @@
 
 .empowering .block-icons .ads-icon {
     width: 70%;
+}
+
+
+/* Section key-benefits */
+
+.key-benefits {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 100px 15px;
+    text-align: center;
+    background-image: linear-gradient(to top, rgba(231, 231, 231, 0.25) 0, white);
+}
+
+.key-benefits h2 {
+    font-size: var(--size-40);
+    font-weight: 600;
+    color: var(--black);
+    margin: 0 auto;
+    padding-bottom: var(--size-10);
+}
+
+.benefits-cards-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 100px 0 20px;
+}
+
+.benefits-card {
+    min-width: 125px;
+    max-width: 250px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 5px;
+    box-shadow: 5px 5px var(--size-20) rgba(48, 63, 100, 0.2);
+    padding: var(--size-20);
+}
+
+.card-img-container {
+    max-width: 50px;
+    min-width: 50px;
+}
+
+.card-p-container {
+    text-align: left;
+    min-height: 75px;
+    max-height: 75px;
+}
+
+.benefits-card a {
+    font-weight: 600;
+}
+
+.benefits-card .arrow-blue {
+    border-width: 0 2px 2px 0;
+}
+
+.sketch-container h3 {
+    display: inline-block;
+}
+
+.sketch-container a {
+    background-color: rgb(0, 201, 166);
+    padding: 0 0.5rem;
+}
+
+
+/* Section Perspective */
+
+.perspective {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 150px 0 0;
+    text-align: center;
+    background-color: rgb(248, 250, 254);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -4;
+    overflow: hidden;
+}
+
+.perspective .block-text {
+    width: 50%;
+    padding: 0 var(--size-50);
+    text-align: left;
+}
+
+.perspective h2 {
+    font-size: var(--size-30);
+    font-weight: 700;
+    color: var(--black);
+    margin: 0 auto;
+    padding-bottom: var(--size-30);
+}
+
+.perspective a {
+    font-weight: 600;
+    padding: .75rem 1.5rem;
+    font-size: var(--size-16);
+}
+
+.grey-square1 {
+    height: 800px;
+    width: 800px;
+    background-color: rgba(243, 245, 247, .5);
+    bottom: -340px;
+    right: -90px;
+    position: absolute;
+    border-radius: 75px;
+    z-index: -3;
+}
+
+.white-square {
+    height: 800px;
+    width: 800px;
+    background-color: rgb(248, 250, 254);
+    bottom: -333px;
+    right: -83px;
+    position: absolute;
+    border-radius: 75px;
+    z-index: -4;
+}
+
+.grey-square2 {
+    height: 800px;
+    width: 800px;
+    background-color: rgba(243, 245, 247, .5);
+    bottom: -322px;
+    right: -73px;
+    position: absolute;
+    border-radius: 75px;
+    z-index: -5;
+}
+
+.perspective img {
+    box-shadow: -5px -5px var(--size-20) rgba(48, 63, 100, 0.2);
+}
+
+
+/* Section Why Front */
+
+.why-front {
+    max-width: 75rem;
+    margin: 0 auto var(--size-150);
+    padding: 150px 0 0;
+    text-align: center;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-front h2 {
+    font-size: var(--size-40);
+    font-weight: 600;
+    color: var(--black);
+    margin: 0 auto;
+    padding-bottom: var(--size-10);
+}
+
+.why-front p {
+    font-size: var(--size-16);
+    padding: var(--size-10) 0;
+    font-weight: 600;
+    color: var(--font-color-base);
+}
+
+.why-front .bullet-points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 75px 0 var(--size-10);
+}
+
+.bullet-points .bullet {
+    background-color: rgb(236, 242, 255);
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    max-width: 45px;
+    max-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bullet .dot {
+    color: rgb(55, 125, 255);
+    font-size: var(--size-50);
+}
+
+.bullet-points .straight-line {
+    background-color: rgb(236, 242, 255);
+    width: 150px;
+    height: 3px;
+    margin: 0 15px;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.why-front .points {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    min-width: 70%;
+}
+
+.points h3 {
+    width: 250px;
+    padding: 0;
+    margin: 10px 0 75px;
+}
+
+.points h3:first-child {
+    padding-left: 78px;
+}
+
+.points h3:nth-child(2) {
+    padding-left: 32px;
+}
+
+.points h3:nth-child(3) {
+    padding-right: 20px;
+}
+
+.points h3:nth-child(4) {
+    padding-right: 80px;
+}
+
+
+/* Section Template */
+
+.template {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 15px 15px 0;
+    text-align: center;
+    background-color: lightyellow;
+    height: 800px;
 }

@@ -141,6 +141,15 @@ img {
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
+    pointer-events: none;
+}
+
+.arrow-white {
+    border: solid var(--white);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    pointer-events: none;
 }
 
 .left {

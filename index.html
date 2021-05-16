@@ -51,6 +51,7 @@
                     </li>
                 </ul>
             </nav>
+            <div id="navbarBg" class="navbg"></div>
             <nav id="navbar" class="bottomNav">
                 <div>
                     <a href="./html/dummy-page.html">
@@ -75,8 +76,10 @@
                     <h1>Empowering <br> teams with the <br> freedom</h1>
                     <p>Own the unlimited power of the web <br> development.</p>
                     <div class="empowering-buttons">
-                        <a class="btn" href="#"><i class="fa fa-play-circle"></i>&nbsp;&nbsp;Play Video</a>
-                        <a class="btn btn-white" href="#">Learn More&nbsp;&nbsp;&nbsp;<i class="arrow-blue right"></i></a>
+                        <a class="btn" href="./html/dummy-page.html"><i class="fa fa-play-circle"></i>&nbsp;&nbsp;Play
+                            Video</a>
+                        <a class="btn btn-white" href="./html/dummy-page.html">Learn More&nbsp;&nbsp;&nbsp;<i
+                                class="arrow-blue right"></i></a>
                     </div>
                 </div>
                 <div class="block-icons">
@@ -119,9 +122,134 @@
             </section>
         </header>
     </section>
+    <section class="key-benefits">
+        <h2>Key benefits</h2>
+        <p>Design faster with a growing array of beautiful templates.</p>
+        <div class="benefits-cards-container">
+            <div class="benefits-card">
+                <div class="card-img-container">
+                    <img src="./icons/responsive.svg" alt="mobile and tablet">
+                </div>
+                <h3>Responsive</h3>
+                <div class="card-p-container">
+                    <p>Front is an incredibly beautiful, fully responsive, and mobile-first projects on the web.</p>
+                </div>
+                <a class="btn btn-white" href="./html/dummy-page.html">
+                    Learn More&nbsp;&nbsp;&nbsp;
+                    <i class="arrow-blue right"></i>
+                </a>
+            </div>
+            <div class="benefits-card">
+                <div class="card-img-container">
+                    <img src="./icons/customizable.svg" alt="gear">
+                </div>
+                <h3>Customizable</h3>
+                <div class="card-p-container">
+                    <p>Front template can be easily customized with cutting-edge components and features</p>
+                </div>
+                <a class="btn btn-white" href="./html/dummy-page.html">
+                    Learn More&nbsp;&nbsp;&nbsp;
+                    <i class="arrow-blue right"></i>
+                </a>
+            </div>
+            <div class="benefits-card">
+                <div class="card-img-container">
+                    <img src="./icons/premium.svg" alt="chart">
+                </div>
+                <div class="sketch-container">
+                    <h3>Premium&nbsp;</h3>
+                    <a class="btn" href="./html/dummy-page.html">sketch</a>
+                </div>
+                <div class="card-p-container">
+                    <p>Front is not only for developers but also for designers, and includes a Sketch file.</p>
+                </div>
+                <a class="btn btn-white" href="./html/dummy-page.html">
+                    Learn More&nbsp;&nbsp;&nbsp;
+                    <i class="arrow-blue right"></i>
+                </a>
+            </div>
+            <div class="benefits-card">
+                <div class="card-img-container">
+                    <img src="./icons/documentation.svg" alt="document">
+                </div>
+                <h3>Documentation</h3>
+                <div class="card-p-container">
+                    <p>Every component and plugin is well documentd with live exaples</p>
+                </div>
+                <a class="btn btn-white" href="./html/dummy-page.html">
+                    Learn More&nbsp;&nbsp;&nbsp;
+                    <i class="arrow-blue right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="perspective">
+        <div class="grey-square2"></div>
+        <div class="white-square"></div>
+        <div class="grey-square1"></div>
+        <div class="block-text">
+            <h2>Front makes you look at things from a different perspectives</h2>
+            <a class="btn" href="./html/dummy-page.html">Get Started&nbsp;&nbsp;<i class="arrow-white right"></i></a>
+        </div>
+        <div class="block-image">
+            <img src="./banners/banner_one.jpg" alt="company banner">
+        </div>
+    </section>
+    <section class="why-front">
+        <h2>Why Front?</h2>
+        <p>Front is an incredibly beautiful, fully responsive, and mobile-first projects <br> on the web - it is the starting point for creative sites</p>
+        <div class="bullet-points">
+            <div class="bullet">
+                <div class="dot">&#x00b7;</div>
+            </div>
+            <div class="straight-line"></div>
+            <div class="bullet">
+                <div class="dot">&#x00b7;</div>
+            </div>
+            <div class="straight-line"></div>
+            <div class="bullet">
+                <div class="dot">&#x00b7;</div>
+            </div>
+            <div class="straight-line"></div>
+            <div class="bullet">
+                <div class="dot">&#x00b7;</div>
+            </div>
+        </div>
+        <div class="points">
+            <h3>Basic elements</h3>
+            <h3>Components</h3>
+            <h3>Combined components</h3>
+            <h3>Page layouts</h3>
+        </div>
+        <div class="block-image">
+            <img src="./banners/banner_two.jpg" alt="company banner">
+        </div>
+    </section>
+    <section class="template">
+
+    </section>
 
     <script>
-        // const selDemos = document.querySelector("a[aria-expanded]");
+        const nav = document.getElementById("navbar");
+        const navbarBg = document.getElementById("navbarBg");
+        var flag = 1;
+        window.onscroll = function() {
+            if (window.pageYOffset > 85) {
+                flag = 0;
+                navbarBg.classList.remove("stickySlideUp");
+                nav.classList.remove("stickySlideUp");
+                nav.classList.add("sticky");
+                navbarBg.classList.add("sticky");
+            } else {
+                if (!flag) {
+                    navbarBg.classList.add("stickySlideUp");
+                    nav.classList.add("stickySlideUp");
+                }
+                nav.classList.remove("sticky");
+                navbarBg.classList.remove("sticky");
+            }
+        }
+
         const selDemos = document.getElementById("demos");
         const selDocs = document.getElementById("docs");
 
@@ -129,7 +257,7 @@
             target
         }) {
             const expanded = target.getAttribute("aria-expanded") === "true" || false;
-            selDemos.setAttribute("aria-expanded", !expanded);
+            target.setAttribute("aria-expanded", !expanded);
         }
 
         selDemos.addEventListener("click", toggleNav);
