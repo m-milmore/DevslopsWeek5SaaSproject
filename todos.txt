@@ -1,4 +1,8 @@
 convert px into rem
+why Front section => video on the banner image
+vérifier toutes les interactivités
+animation on pricing section
+remettre scroll-behaviour
 
 Ce n'est pas une zone strictement résidentielle. 
 Je demeure sur la rue avoisinante et il n'y a aucune indication à ce sujet. 
@@ -6,3 +10,10 @@ Je demeure sur la rue avoisinante et il n'y a aucune indication à ce sujet.
 We are switches.
 Different switches create a specific habit for a specific individual.
 Once a habit is triggered, then the actions follow.
+
+Quand on a l'amitié, on n'a pas besoin de justice.
+Quand on a la justice, on a encore besoin de l'amitié. - Aristote
+
+Aimer c'est se réjouir. - Aristote
+
+albeit - quoique

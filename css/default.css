@@ -58,17 +58,17 @@ a {
 }
 
 select {
-    border-color: white;
+    /* border-color: white;
     outline: none;
     border: 1px solid transparent;
     color: var(--font-color-base);
     font-size: var(--size-14);
-    cursor: pointer;
+    cursor: pointer; */
     /* for Firefox */
-    -moz-appearance: none;
+    /* -moz-appearance: none; */
     /* for Chrome */
-    -webkit-appearance: none;
-    background-color: transparent;
+    /* -webkit-appearance: none;
+    background-color: transparent; */
 }
 
 p {
