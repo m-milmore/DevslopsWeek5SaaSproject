@@ -1,8 +1,13 @@
-convert px into rem
-why Front section => video on the banner image
+convert px into rem					done 19/5/2021
+why Front section => video on the banner image		done
 vérifier toutes les interactivités
-animation on pricing section
-remettre scroll-behaviour
+animation on pricing section				done
+remettre scroll-behaviour				done
+change the color to your own theme
+animation slide up/slide down
+animation on scroll for logos
+menu with label links
+
 
 Ce n'est pas une zone strictement résidentielle. 
 Je demeure sur la rue avoisinante et il n'y a aucune indication à ce sujet. 

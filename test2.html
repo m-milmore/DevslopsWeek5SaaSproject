@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: 1px solid black;
+            width: 200px;
+            height: 100px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <p>Try the scrollbar in div.</p>
+
+    <div onscroll="myFunction(1)">
+        In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+        <br><br> 'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.'
+    </div> -->
+
+    <div id="features"></div>
+    <section class="perspective container">
+        <div class="block-text" onscroll="myFunction(1)">
+            <h2>Front makes you look at things from a different perspectives</h2>
+            <a class="btn" href="./html/dummy-page.html">
+                    Get Started&nbsp;&nbsp;<i class="arrow-white right"></i>
+                </a>
+        </div>
+        <div class="block-image js-scroll fade-in-bottom">
+            <img src="./banners/banner_one.jpg" alt="company banner">
+        </div>
+    </section>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction(num) {
+            document.getElementById("demo").innerHTML = "You scrolled in div.";
+        }
+    </script>
+
+</body>
+
+</html>

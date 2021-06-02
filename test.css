@@ -35,3 +35,244 @@
     position: absolute;
     border-radius: 75px;
 }
+
+.top,
+.bottom {
+    height: 1200px;
+    background-color: honeydew;
+}
+
+.scroll-container {
+    height: 300px;
+    background-color: rgb(39, 218, 39);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-element {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+}
+
+.js-scroll {
+    /* opacity: 0; */
+    transition: opacity 500ms;
+}
+
+.js-scroll.scrolled {
+    opacity: 1;
+}
+
+.scrolled.fade-in-bottom {
+    animation: fade-in-bottom 1s ease-in-out both;
+}
+
+@keyframes fade-in-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    .js-scroll {
+        opacity: 1;
+    }
+    .scrolled {
+        animation: none !important;
+    }
+}
+
+.div-class {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#test {
+    color: blue;
+}
+
+#test.lightUp {
+    color: red;
+}
+
+
+/* zoom testing */
+
+.hire-us-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--size-20);
+    min-width: 300px;
+    min-height: 150px;
+}
+
+.hire-us-img-container>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.image-class {
+    min-width: 50px;
+    max-width: 50px;
+}
+
+.image-class .zoomin {
+    animation: zoominimg 5s ease-in-out forwards;
+}
+
+@keyframes zoominimg {
+    0% {
+        transform: scale(1, 1);
+    }
+    5% {
+        transform: scale(1.5, 1.5);
+    }
+    95% {
+        transform: scale(1.5, 1.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.image-class .zoomout {
+    animation: zoomoutimg .2s ease-in-out forwards;
+}
+
+@keyframes zoomoutimg {
+    from {
+        transform: scale(1.5, 1.5);
+    }
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.image-class img {
+    border-radius: var(--size-100);
+}
+
+
+/* Section Why Front */
+
+.why-front {
+    margin: 0 auto;
+    padding: 9.375rem 10px 0;
+    text-align: center;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-front h2 {
+    font-size: var(--size-40);
+    font-weight: 600;
+    color: var(--black);
+    margin: 0 auto;
+    padding-bottom: var(--size-10);
+}
+
+.why-front p {
+    font-size: var(--size-16);
+    padding: var(--size-10) 0;
+    font-weight: 600;
+    color: var(--font-color-base);
+}
+
+.why-front .bullet-points {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin: 4.6875rem 0 var(--size-50);
+    gap: 0;
+}
+
+.bullet-points>div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bullet-points>div:first-child>div:first-child,
+.bullet-points>div:nth-child(4)>div:last-child {
+    visibility: hidden;
+}
+
+.bullet-points .line {
+    width: 38%;
+}
+
+.line hr {
+    color: rgb(236, 242, 255);
+    background-color: rgb(236, 242, 255);
+    width: 100%;
+    height: 3px;
+    border: none;
+}
+
+.bullet-points .bullet {
+    background-color: rgb(236, 242, 255);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    width: 4vw;
+    height: 4vw;
+}
+
+.bullet .dot {
+    color: rgb(55, 125, 255);
+    font-size: var(--size-50);
+}
+
+.why-front .block-image {
+    position: relative;
+}
+
+.why-front .block-image>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgba(196, 196, 196, .1);
+    border-radius: 50%;
+    width: 3.4375rem;
+    height: 3.4375rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-front .block-image>div>a>i {
+    font-size: var(--size-16);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+}
+
+.dummy {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(91, 248, 91);
+}
